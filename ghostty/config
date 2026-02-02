@@ -1,0 +1,102 @@
+# ==================== 终端基础配置 ====================
+# 终端类型 - 使用 xterm-256color 以获得最佳兼容性和颜色支持
+term                           = xterm-256color
+# 回滚缓冲区限制 - 0 表示无限制（注意：会占用更多内存）
+scrollback-limit               = 100000000
+
+# ==================== 字体配置 ====================
+# 字体家族 - 使用 Nerd Font 以支持图标显示
+font-family                    = Caskaydia Nerd Font
+# 字体大小 - 单位为点(pt)
+font-size                      = 15
+# 字体加粗 - 使文本显示更加清晰醒目
+font-thicken                   = true
+
+# ==================== 窗口配置 ====================
+# 窗口高度 - 以字符行数为单位
+window-height                  = 30
+# 窗口宽度 - 以字符列数为单位
+window-width                   = 100
+# 窗口水平内边距 - 左右留白距离(像素)
+window-padding-x               = 15
+# 窗口垂直内边距 - 上下留白距离(像素)
+window-padding-y               = 15
+# 窗口状态保存 - 总是保存窗口大小和位置
+window-save-state              = always
+# 垂直同步 - 启用垂直同步以减少画面撕裂
+window-vsync                   = true
+
+# ==================== 外观与体验 ====================
+# 背景不透明度 - 0.0(完全透明)到1.0(完全不透明)
+background-opacity             = 0.9
+# 鼠标滚轮滚动倍数 - precision(触控板):1, discrete(鼠标滚轮):3
+mouse-scroll-multiplier        = precision:1,discrete:3
+# 背景模糊 - 启用背景模糊效果(macOS毛玻璃效果)
+background-blur                = true
+# 光标粗细调整 - 增加光标线条的粗细度
+adjust-cursor-thickness        = 3
+# 光标样式 - 竖线样式(可选:block块状/underline下划线)
+cursor-style                   = bar
+# 光标不透明度 - 0.0(完全透明)到1.0(完全不透明)
+cursor-opacity                 = 0.8
+# 光标前景背景反转 - 光标位置的文字颜色反转
+cursor-invert-fg-bg            = true
+# 下划线位置调整 - 向下偏移下划线位置
+adjust-underline-position      = 3
+# 粗体文本亮度 - 粗体字符使用更亮的颜色显示
+bold-is-bright                 = true
+# URL链接支持 - 自动识别并可点击URL链接
+link-url                       = true
+# 输入时隐藏鼠标 - 打字时自动隐藏鼠标指针
+mouse-hide-while-typing        = true
+
+# ==================== 剪贴板配置 ====================
+# 剪贴板粘贴保护 - 防止恶意粘贴大量文本
+clipboard-paste-protection     = true
+# 剪贴板去除尾随空格 - 复制时自动清理行尾空格
+clipboard-trim-trailing-spaces = true
+# 选中即复制 - 选中文本自动复制到剪贴板
+copy-on-select                 = true
+
+# ==================== Shell 集成 ====================
+# Shell 集成 - 与 zsh 终端深度集成
+shell-integration              = zsh
+# Shell 集成功能 - 启用光标、sudo提示、标题更新功能
+shell-integration-features     = cursor,sudo,title
+
+# ==================== macOS 专属配置 ====================
+# macOS 自动安全输入 - 自动启用安全键盘输入模式
+macos-auto-secure-input        = true
+# macOS 安全输入指示 - 显示安全输入模式指示器
+macos-secure-input-indication  = true
+# macOS 标题栏样式 - 使用标签页样式的标题栏
+macos-titlebar-style           = tabs
+# macOS Option 键作为 Alt - 将 Option 键映射为 Alt 键
+macos-option-as-alt            = true
+# 关闭最后窗口时退出 - 所有窗口关闭后退出应用
+quit-after-last-window-closed  = true
+
+# ==================== 快捷键配置 ====================
+# 窗口与标签页管理
+keybind = super+n=new_tab
+keybind = global:super+shift+n=new_window
+
+# 视图控制
+keybind = super+f=toggle_maximize
+keybind = super+shift+f=toggle_fullscreen
+
+# 功能面板
+keybind = super+b=toggle_command_palette
+keybind = super+g=toggle_tab_overview
+
+# 禁用快捷键
+keybind = super+k=ignore
+
+# 文本编辑快捷键
+keybind = super+left=text:\x01
+keybind = super+right=text:\x05
+keybind = shift+enter=text:\x1b\r
+
+
+# ==================== 命令面板配置 ====================
+command-palette-entry = title:打开 Neovim, description:在当前目录启动 vim 编辑器, action:text:nvim\n

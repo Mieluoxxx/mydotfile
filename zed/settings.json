@@ -1,0 +1,433 @@
+{
+  // ========================================
+  // 基础配置 (Basic Configuration)
+  // ========================================
+  "agent_servers": {
+    "opencode": {
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"],
+      "env": {},
+    },
+  },
+  "base_keymap": "VSCode",
+  "icon_theme": "Material Icon Theme",
+  "theme": "Dayfox - opaque",
+
+  // ========================================
+  // 字体配置 (Font Configuration)
+  // ========================================
+  "buffer_font_family": "CaskaydiaMono Nerd Font",
+  "buffer_font_size": 18.0,
+  "ui_font_family": "CaskaydiaMono Nerd Font",
+  "ui_font_size": 18,
+  "agent_ui_font_size": 18,
+  "agent_buffer_font_size": 18,
+
+  // ========================================
+  // 终端配置 (Terminal Configuration)
+  // ========================================
+  "terminal": {
+    "font_family": "CaskaydiaMono Nerd Font",
+    "font_size": 14,
+  },
+
+  // ========================================
+  // 编辑器功能 (Editor Features)
+  // ========================================
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "minimap": {
+    "show": "auto",
+  },
+
+  // ========================================
+  // 外部集成 (External Integration)
+  // ========================================
+  "agent": {
+    "profiles": {
+      "leetcode": {
+        "name": "leetcode",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {},
+      },
+      "notion": {
+        "name": "notion",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "find_path": true,
+          "grep": true,
+          "move_path": true,
+          "list_directory": true,
+          "now": true,
+          "open": true,
+          "read_file": true,
+          "terminal": true,
+          "thinking": true,
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {
+          "mcp-sequentialthinking-tools": {
+            "tools": {
+              "sequentialthinking_tools": true,
+            },
+          },
+          "notionMCP": {
+            "tools": {
+              "notion-update-page": true,
+              "notion-search": true,
+              "notion-update-database": true,
+              "notion-move-pages": true,
+              "notion-get-users": true,
+              "notion-get-user": true,
+              "notion-get-teams": true,
+              "notion-get-self": true,
+              "notion-get-comments": true,
+              "notion-duplicate-page": true,
+              "notion-fetch": true,
+              "notion-create-pages": true,
+              "notion-create-database": true,
+              "notion-create-comment": true,
+            },
+          },
+        },
+      },
+    },
+    "inline_assistant_model": {
+      "provider": "薄荷",
+      "model": "gemini-flash-latest",
+    },
+    "always_allow_tool_actions": true,
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "Elysia",
+      "model": "glm-4.7",
+    },
+    "model_parameters": [],
+  },
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
+  "language_models": {
+    "openai_compatible": {
+      "NVIDIA": {
+        "api_url": "https://integrate.api.nvidia.com/v1",
+        "available_models": [
+          {
+            "name": "z-ai/glm4.7, minimaxai/minimax-m2.1, moonshotai/kimi-k2.5",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": true,
+              "chat_completions": true
+            }
+          }
+        ]
+      },
+      "AutoCore": {
+        "api_url": "https://litellm.autocore.ai/v1",
+        "available_models": [
+          {
+            "name": "claude-opus-4-5",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+      "Elysia": {
+        "api_url": "https://elysiver.h-e.top/toolify/v1",
+        "available_models": [
+          {
+            "name": "glm-4.7",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+      "SWT": {
+        "api_url": "https://new-api.koyeb.app/v1",
+        "available_models": [
+          {
+            "name": "glm-4.7-cerebras",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+      "KFC": {
+        "api_url": "https://kfc-api.sxxe.net/v1",
+        "available_models": [
+          {
+            "name": "claude-opus-4-5",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "anthropic/claude-opus-4.5",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "claude-opus-4-5-thinking",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+      "dev88": {
+        "api_url": "https://api.dev88.tech/v1",
+        "available_models": [
+          {
+            "name": "gemini-3-flash-preview",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "gemini-3-flash-preview-maxthinking",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "claude-opus-4-5-20251101",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "gpt-5.2",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+      "黑与白": {
+        "api_url": "https://ai.hybgzs.com/v1",
+        "available_models": [
+          {
+            "name": "hyb-Optimal/antigravity/gemini-3-pro-high",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "hyb-Optimal/claude-opus-4.5",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "hyb-Optimal/gemini-3-flash-preview",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+      "随时跑路": {
+        "api_url": "https://runanytime.hxi.me/v1",
+        "available_models": [
+          {
+            "name": "chat-only/claude-opus-4.5",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "chat-only/gemini-3.0-flash",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+      "B4U": {
+        "api_url": "https://b4u.qzz.io/v1",
+        "available_models": [
+          {
+            "name": "claude-4.5-sonnet",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+    },
+  },
+
+  "context_servers": {
+    "exa": {
+      "settings": {},
+      "enabled": true,
+      "url": "https://mcp.exa.ai/mcp",
+    },
+    "leetcode": {
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "@jinzcdev/leetcode-mcp-server"],
+      "env": {
+        "LEETCODE_SESSION": "",
+        "LEETCODE_SITE": "cn",
+      },
+    },
+    "notionMCP": {
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"],
+    },
+    "mcp-deepwiki": {
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "mcp-deepwiki@latest"],
+      "env": {},
+    },
+    "open-websearch": {
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "open-websearch@latest"],
+      "env": {
+        "DEFAULT_SEARCH_ENGINE": "duckduckgo",
+        "MODE": "stdio",
+        "ALLOWED_SEARCH_ENGINES": "duckduckgo,bing,brave",
+      },
+    },
+    "mcp-server-github": {
+      "enabled": true,
+      "settings": {
+        "github_personal_access_token": "",
+      },
+    },
+    "mcp-sequentialthinking-tools": {
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "mcp-sequentialthinking-tools"],
+      "env": {
+        "MAX_HISTORY_SIZE": "1000",
+      },
+    },
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true,
+  },
+}
