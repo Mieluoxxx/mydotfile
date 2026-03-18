@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "exa": {
+      "url": "https://mcp.exa.ai/mcp"
+    },
+    "deepwiki": {
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "pencil": {
+      "name": "pencil",
+      "transport": "stdio",
+      "command": "/Users/moguw/.cursor/extensions/highagency.pencildev-0.6.33-universal/out/mcp-server-darwin-arm64",
+      "args": [
+        "--app",
+        "cursor"
+      ],
+      "env": {}
+    }
+  }
+}

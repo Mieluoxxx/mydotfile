@@ -1,0 +1,7 @@
+interface:
+  display_name: "Harness 文档同步"
+  short_description: "AI Coding 后同步 Harness 规则与记录"
+  default_prompt: "Use $harness-doc-sync to sync harness records and root entry docs after coding changes."
+
+policy:
+  allow_implicit_invocation: true
